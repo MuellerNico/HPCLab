@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#SBATCH -n 1 # Number of cores
+#SBATCH -n 2 # Number of cores
+#SBATCH -N 2 # Number of nodes
 #SBATCH --cpus-per-task=1
 #SBATCH --time=4:00:00
 #SBATCH --mem-per-cpu=1024
