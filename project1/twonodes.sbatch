@@ -9,4 +9,6 @@
 
 #SBATCH --constraint="EPYC_7763"
 
+module load gcc
+module list
 srun ./helloworld
