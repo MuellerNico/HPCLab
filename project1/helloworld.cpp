@@ -1,6 +1,15 @@
-#include <boost/asio/ip/host_name.hpp>
+//#include <boost/asio/ip/host_name.hpp>
+#include <iostream>
+#include <unistd.h>
+#include <limits.h>
 
 int main() {
-	const auto host_name = boost::asio::ip::host_name();
-	std::cout << host_name;
+	char hostname[HOST_NAME_MAX];
+	char username[LOGIN_NAME_MAX];
+	gethostname(hostname, HOST_NAME_MAX);
+	getlogin_r(username, LOGIN_NAME_MAX);
+	std::cout << "Hello, " << username << ", the host name of your machine is: " << hostname << std::endl;
 }
+
+
+
