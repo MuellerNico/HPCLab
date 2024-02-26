@@ -11,4 +11,5 @@
 
 module load gcc
 module list
+lscpu | grep "Model name"
 srun ./helloworld
