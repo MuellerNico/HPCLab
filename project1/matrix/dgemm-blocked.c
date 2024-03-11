@@ -8,6 +8,7 @@ const char* dgemm_desc = "Blocked dgemm.";
  * On exit, A and B maintain their input values.
  */
 
+// todo: use pragmas, vectorization
 void square_dgemm(int n, double* A, double* B, double* C) {
   int s = 36; // this value is specific for the 32 kB L1d cache of the AMD EPYC 7763 processor
   if (n < s) {
