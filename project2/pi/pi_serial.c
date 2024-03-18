@@ -19,6 +19,9 @@ int main(int argc, char *argv[]) {
   double time = walltime() - time_start;
 
   printf("pi = \%.15f, N = %9d, time = %.8f secs\n", pi, N, time);
-
+  
+  FILE* fptr = fopen("serial.txt", "a");
+  fprintf(fptr, "%.8f\n", time);
+  fclose(fptr);
   return 0;
 }

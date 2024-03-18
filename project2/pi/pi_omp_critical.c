@@ -4,22 +4,35 @@
 
 int main(int argc, char *argv[]) {
   long int N = 1000000;
-  double time_start, h, sum, pi;
 
   if ( argc > 1 ) N = atol(argv[1]);
 
   /* Parallelize with OpenMP using the critical directive */
-  time_start = walltime();
-  h = 1./N;
-  sum = 0.;
-  for (int i = 0; i < N; ++i) {
-    double x = (i + 0.5)*h;
-    sum += 4.0 / (1.0 + x*x);
+  const double time_start = walltime();
+  const double h = 1./N;
+  double sum = 0.;
+  #pragma omp parallel
+  {
+    double partial_sum = 0.;
+    const int nthreads = omp_get_num_threads();
+    const int tid = omp_get_thread_num();
+    const int i_beg = tid*N/nthreads;
+    const int i_end = (tid + 1)*N/nthreads;
+    #pragma omp for
+    for (int i = i_beg; i < i_end; ++i){
+      const double x = (i + 0.5)*h;
+      partial_sum += 4.0 / (1.0 + x*x);
+    }
+    #pragma omp critical
+    sum += partial_sum;
   }
-  pi = sum*h;
-  double time = walltime() - time_start;
+  const double pi = sum*h;
+  const double time = walltime() - time_start;
 
   printf("pi = \%.15f, N = %9d, time = %.8f secs\n", pi, N, time);
-
+  
+  FILE* fptr = fopen("critical.txt", "a");
+  fprintf(fptr, "%.8f\n", time);
+  fclose(fptr);
   return 0;
 }
