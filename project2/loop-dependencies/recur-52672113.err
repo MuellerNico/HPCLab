@@ -1,0 +1,16 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/11.4.0
+
+
+Currently Loaded Modules:
+  1) StdEnv   2) gcc/11.4.0
+
+ 
+
+recur_omp.c: In function 'main':
+recur_omp.c:22:24: error: 'lastprivate' is not valid for '#pragma omp parallel'
+   22 |   #pragma omp parallel lastprivate(Sn)
+      |                        ^~~~~~~~~~~
+make: *** [Makefile:12: recur_omp] Error 1
+/var/spool/slurm/slurmd/state/job52672113/slurm_script: line 28: ./recur_omp: No such file or directory

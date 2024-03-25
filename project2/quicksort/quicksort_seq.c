@@ -39,23 +39,9 @@ void quicksort(double *data, int length) {
   // print_list(data, length);
 
   /* recursion */
-  // Only create a task if the partition size is larger than 100
-  if (right > 100) {
-      #pragma omp task shared(data)
-      quicksort(data, right);
-  } else if (right > 1) {
-      quicksort(data, right); // Sort smaller partitions sequentially
-  }
-
-  // Adjusted for the right side of the pivot
-  if (length - left > 100) {
-      #pragma omp task shared(data)
-      quicksort(&(data[left]), length - left);
-  } else if (length - left > 1) {
-      quicksort(&(data[left]), length - left); // Sort smaller partitions sequentially
-  }
-
-  #pragma omp taskwait // Wait for all spawned tasks to complete
+  
+  quicksort(data, right);
+  quicksort(&(data[left]), length - left);
 }
 
 int check(double *data, int length) {
