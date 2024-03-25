@@ -8,6 +8,7 @@
 #include "consts.h"
 #include "pngwriter.h"
 #include "walltime.h"
+#include <omp.h>
 
 int main(int argc, char **argv) {
   png_data *pPng = png_create(IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -24,10 +25,10 @@ int main(int argc, char **argv) {
   double time_start = walltime();
   // do the calculation
   cy = MIN_Y;
-  #pragma omp parallel for private(cx, x, y, x2, y2) reduction(+:nTotalIterationsCount)
-  for (j = 0; j < IMAGE_HEIGHT; j++) {
+  #pragma omp parallel for reduction(+:nTotalIterationsCount)
+  for (j = 0, cy = MIN_Y; j < IMAGE_HEIGHT; j++, cy += fDeltaY) {
     cx = MIN_X;
-    for (i = 0; i < IMAGE_WIDTH; i++) {
+    for (i = 0, cx = MIN_X; i < IMAGE_WIDTH; i++, cx += fDeltaX) {
        // x and y are the real and imaginary parts of the complex number z = x + i * y
       x = cx; // z1
       y = cy; // z1
@@ -46,16 +47,18 @@ int main(int argc, char **argv) {
               y2 = y * y;
               n++;
        }
+       #pragma omp atomic
        nTotalIterationsCount += n;
       // <<<<<<<< CODE IS MISSING
       // n indicates if the point belongs to the mandelbrot set
       // plot the number of iterations at point (i, j)
       int c = ((long)n * 255) / MAX_ITERS;
+      #pragma omp critical
       png_plot(pPng, i, j, c, c, c);
-      cx += fDeltaX;
+      //cx += fDeltaX;
       // keep track of total number of iterations
     }
-    cy += fDeltaY;
+    //cy += fDeltaY;
   }
   double time_end = walltime();
 

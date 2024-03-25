@@ -1,0 +1,21 @@
+
+Currently Loaded Modules:
+  1) gcc/11.4.0
+
+ 
+
+mandel_seq.c: In function 'main':
+mandel_seq.c:80:28: error: invalid operands to binary + (have 'double' and 'char *')
+   80 |   png_write(pPng, time_end + "mandel.png");
+      |                            ^
+      |                            |
+      |                            char *
+make: *** [mandel_seq.o] Error 1
+/var/spool/slurm/slurmd/state/job52705652/slurm_script: line 25: ./mandel_seq: No such file or directory
+/var/spool/slurm/slurmd/state/job52705652/slurm_script: line 25: ./mandel_seq: No such file or directory
+/var/spool/slurm/slurmd/state/job52705652/slurm_script: line 25: ./mandel_seq: No such file or directory
+/var/spool/slurm/slurmd/state/job52705652/slurm_script: line 25: ./mandel_seq: No such file or directory
+/var/spool/slurm/slurmd/state/job52705652/slurm_script: line 25: ./mandel_seq: No such file or directory
+/var/spool/slurm/slurmd/state/job52705652/slurm_script: line 25: ./mandel_seq: No such file or directory
+/var/spool/slurm/slurmd/state/job52705652/slurm_script: line 25: ./mandel_seq: No such file or directory
+/var/spool/slurm/slurmd/state/job52705652/slurm_script: line 25: ./mandel_seq: No such file or directory
