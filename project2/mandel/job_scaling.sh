@@ -17,7 +17,7 @@ make clean
 make
 
 # Run the program for OMP_NUM_THREADS equal to 1, 2, 4, 8, ..., 64, 128
-for ((i=7; i<=7; i++))
+for ((i=0; i<=7; i++))
 do
   OMP_NUM_THREADS=$((2**i))
   echo "Running with OMP_NUM_THREADS=$OMP_NUM_THREADS"

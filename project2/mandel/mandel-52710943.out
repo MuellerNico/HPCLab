@@ -1,0 +1,69 @@
+rm -f *.o mandel_seq
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O3 -fopenmp -I/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/include mandel_seq.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O3 -fopenmp -I/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/include pngwriter.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O3 -fopenmp -I/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/include walltime.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O3 -fopenmp -L/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/lib64:/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/lib -lpng mandel_seq.o pngwriter.o walltime.o -o mandel_seq
+Running with OMP_NUM_THREADS=1
+Total time:                 41.1295 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 7110670801
+Avg. time per pixel:        3.92242e-05 seconds
+Avg. time per iteration:    5.7842e-09 seconds
+Iterations/second:          1.72885e+08
+MFlop/s:                    1383.08
+Running with OMP_NUM_THREADS=2
+Total time:                 13.4203 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 7110670801
+Avg. time per pixel:        1.27986e-05 seconds
+Avg. time per iteration:    1.88735e-09 seconds
+Iterations/second:          5.29843e+08
+MFlop/s:                    4238.74
+Running with OMP_NUM_THREADS=4
+Total time:                 13.4175 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 7110670801
+Avg. time per pixel:        1.27959e-05 seconds
+Avg. time per iteration:    1.88695e-09 seconds
+Iterations/second:          5.29954e+08
+MFlop/s:                    4239.64
+Running with OMP_NUM_THREADS=8
+Total time:                 9.09984 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 7110670801
+Avg. time per pixel:        8.67829e-06 seconds
+Avg. time per iteration:    1.27974e-09 seconds
+Iterations/second:          7.81406e+08
+MFlop/s:                    6251.25
+Running with OMP_NUM_THREADS=16
+Total time:                 5.55513 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 7110670801
+Avg. time per pixel:        5.29778e-06 seconds
+Avg. time per iteration:    7.81238e-10 seconds
+Iterations/second:          1.28002e+09
+MFlop/s:                    10240.2
+Running with OMP_NUM_THREADS=32
+Total time:                 3.37919 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 7110670801
+Avg. time per pixel:        3.22264e-06 seconds
+Avg. time per iteration:    4.75227e-10 seconds
+Iterations/second:          2.10426e+09
+MFlop/s:                    16834
+Running with OMP_NUM_THREADS=64
+Total time:                 2.03242 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 7110670801
+Avg. time per pixel:        1.93827e-06 seconds
+Avg. time per iteration:    2.85827e-10 seconds
+Iterations/second:          3.49862e+09
+MFlop/s:                    27989
+Running with OMP_NUM_THREADS=128
+Total time:                 1.80071 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 7110670801
+Avg. time per pixel:        1.71729e-06 seconds
+Avg. time per iteration:    2.53241e-10 seconds
+Iterations/second:          3.94881e+09
+MFlop/s:                    31590.5
