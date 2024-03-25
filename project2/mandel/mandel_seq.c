@@ -20,16 +20,16 @@ int main(int argc, char **argv) {
 
   long nTotalIterationsCount = 0;
 
-  long i, j;
+  //long i, j;
 
   double time_start = walltime();
   // do the calculation
   //cy = MIN_Y;
 
-  #pragma omp parallel for reduction(+:nTotalIterationsCount)
-  for (j = 0; j < IMAGE_HEIGHT; j++) {
+  #pragma omp parallel for reduction(+:nTotalIterationsCount) private(cx, cy, x, y, x2, y2)
+  for (long j = 0; j < IMAGE_HEIGHT; j++) {
     //cx = MIN_X;
-    for (i = 0; i < IMAGE_WIDTH; i++) {
+    for (long i = 0; i < IMAGE_WIDTH; i++) {
        // x and y are the real and imaginary parts of the complex number z = x + i * y
       cx = MIN_X + i*fDeltaX; // z1
       cy = MIN_Y + j*fDeltaY; // z1
@@ -55,6 +55,7 @@ int main(int argc, char **argv) {
       // n indicates if the point belongs to the mandelbrot set
       // plot the number of iterations at point (i, j)
       int c = ((long)n * 255) / MAX_ITERS;
+      #pragma omp critical
       png_plot(pPng, i, j, c, c, c);
       //cx += fDeltaX;
       // keep track of total number of iterations
