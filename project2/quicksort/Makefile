@@ -1,4 +1,4 @@
-CC     = gcc-13
+CC     = gcc #-13
 CFLAGS = -O3 -fopenmp
 
 all: quicksort

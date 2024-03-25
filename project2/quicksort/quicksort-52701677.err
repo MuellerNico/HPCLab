@@ -1,0 +1,7 @@
+
+Currently Loaded Modules:
+  1) gcc/11.4.0
+
+ 
+
+slurmstepd: error: *** JOB 52701677 ON eu-a2p-278 CANCELLED AT 2024-03-25T20:31:13 DUE TO TIME LIMIT ***

@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include "walltime.h"
 
+
+#define THRESHOLD 10000
+int threshold;
+
 void print_list(double *data, int length) {
   for (int i = 0; i < length; i++) {
     printf("%e\t", data[i]);
@@ -39,23 +43,15 @@ void quicksort(double *data, int length) {
   // print_list(data, length);
 
   /* recursion */
-  // Only create a task if the partition size is larger than 100
-  if (right > 100) {
-      #pragma omp task shared(data)
-      quicksort(data, right);
-  } else if (right > 1) {
-      quicksort(data, right); // Sort smaller partitions sequentially
-  }
+  int isFinal = (length <= threshold);
 
-  // Adjusted for the right side of the pivot
-  if (length - left > 100) {
-      #pragma omp task shared(data)
-      quicksort(&(data[left]), length - left);
-  } else if (length - left > 1) {
-      quicksort(&(data[left]), length - left); // Sort smaller partitions sequentially
-  }
+  #pragma omp task shared(data) final(isFinal)
+  quicksort(data, right);
 
-  #pragma omp taskwait // Wait for all spawned tasks to complete
+  #pragma omp task shared(data) final(isFinal)
+  quicksort(&(data[left]), length - left);
+
+  #pragma omp taskwait // Wait for all spawned tasks to complete before returning
 }
 
 int check(double *data, int length) {
@@ -76,6 +72,12 @@ int main(int argc, char **argv) {
   length = 10000000;
   if (argc > 1) length = atoi(argv[1]);
 
+  if (argc > 2) {
+    threshold = atoi(argv[2]);
+  } else {
+    threshold = THRESHOLD;
+  }
+
   data = (double*)malloc(length * sizeof(double));
   if (data == NULL) {
     printf("memory allocation failed");
@@ -91,12 +93,24 @@ int main(int argc, char **argv) {
   // print_list(data, length);
 
   double time_start = walltime();
-  quicksort(data, length);
+  #pragma omp parallel
+  {
+    #pragma omp single
+    quicksort(data, length);
+  }
   double time = walltime() - time_start;
 
   // print_list(data, length);
 
   printf("Size of dataset: %d, elapsed time[s] %e \n", length, time);
+  
+  FILE *file = fopen("runtimes.txt", "a");
+  if (file != NULL) {
+    fprintf(file, "%e\n", time);
+    fclose(file);
+  } else {
+    printf("Failed to open file.\n");
+  }
 
   if (check(data, length) != 0) printf("Quicksort incorrect.\n");
 
