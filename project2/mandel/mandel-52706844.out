@@ -1,0 +1,13 @@
+rm -f *.o mandel_seq
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O3 -fopenmp -I/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/include mandel_seq.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O3 -fopenmp -I/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/include pngwriter.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O3 -fopenmp -I/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/include walltime.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O3 -fopenmp -L/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/lib64:/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/lib -lpng mandel_seq.o pngwriter.o walltime.o -o mandel_seq
+Running with OMP_NUM_THREADS=128
+Total time:                 1.57185 seconds
+Image size:                 1024 x 1024 = 1048576 Pixels
+Total number of iterations: 13393450140
+Avg. time per pixel:        1.49903e-06 seconds
+Avg. time per iteration:    1.17359e-10 seconds
+Iterations/second:          8.52084e+09
+MFlop/s:                    68166.7

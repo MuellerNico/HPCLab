@@ -25,13 +25,16 @@ int main(int argc, char **argv) {
   double time_start = walltime();
   // do the calculation
   //cy = MIN_Y;
-  #pragma omp parallel for reduction(+:nTotalIterationsCount) private(i, x, y, x2, y2, cx)
+
+  #pragma omp parallel for reduction(+:nTotalIterationsCount)
   for (j = 0; j < IMAGE_HEIGHT; j++) {
     //cx = MIN_X;
     for (i = 0; i < IMAGE_WIDTH; i++) {
        // x and y are the real and imaginary parts of the complex number z = x + i * y
-      x = MIN_X + i*fDeltaX; //cx; // z1
-      y = MIN_Y + j*fDeltaY; //cy; // z1
+      cx = MIN_X + i*fDeltaX; // z1
+      cy = MIN_Y + j*fDeltaY; // z1
+      x = cx; 
+      y = cy;
       x2 = x * x;
       y2 = y * y;
       // compute the orbit z, f(z), f^2(z), f^3(z), ...

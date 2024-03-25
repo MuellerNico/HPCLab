@@ -1,0 +1,47 @@
+rm -f *.o recur_seq recur_omp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O3 recur_seq.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c walltime.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O3 recur_seq.o walltime.o -o recur_seq
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O3 -fopenmp recur_omp.c walltime.o -o recur_omp -lm
+Running sequential version
+Sequential RunTime:  5.696980 seconds
+Final Result Sn   :  485165097.62511122 
+Result ||opt||^2_2 :  5884629305179574.000000
+
+Running with OMP_NUM_THREADS=32
+Thread 17: start_idx = 1062, end_idx = 1125, thread_Sn = 1.000011
+Thread 6: start_idx = 375, end_idx = 437, thread_Sn = 1.000004
+Thread 18: start_idx = 1125, end_idx = 1187, thread_Sn = 1.000011
+Thread 15: start_idx = 937, end_idx = 1000, thread_Sn = 1.000009
+Thread 0: start_idx = 0, end_idx = 62, thread_Sn = 1.000000
+Thread 7: start_idx = 437, end_idx = 500, thread_Sn = 1.000004
+Thread 11: start_idx = 687, end_idx = 750, thread_Sn = 1.000007
+Thread 13: start_idx = 812, end_idx = 875, thread_Sn = 1.000008
+Thread 12: start_idx = 750, end_idx = 812, thread_Sn = 1.000008
+Thread 14: start_idx = 875, end_idx = 937, thread_Sn = 1.000009
+Thread 19: start_idx = 1187, end_idx = 1250, thread_Sn = 1.000012
+Thread 9: start_idx = 562, end_idx = 625, thread_Sn = 1.000006
+Thread 10: start_idx = 625, end_idx = 687, thread_Sn = 1.000006
+Thread 29: start_idx = 1812, end_idx = 1875, thread_Sn = 1.000018
+Thread 2: start_idx = 125, end_idx = 187, thread_Sn = 1.000001
+Thread 31: start_idx = 1937, end_idx = 2000, thread_Sn = 1.000019
+Thread 8: start_idx = 500, end_idx = 562, thread_Sn = 1.000005
+Thread 1: start_idx = 62, end_idx = 125, thread_Sn = 1.000001
+Thread 23: start_idx = 1437, end_idx = 1500, thread_Sn = 1.000014
+Thread 30: start_idx = 1875, end_idx = 1937, thread_Sn = 1.000019
+Thread 28: start_idx = 1750, end_idx = 1812, thread_Sn = 1.000018
+Thread 5: start_idx = 312, end_idx = 375, thread_Sn = 1.000003
+Thread 24: start_idx = 1500, end_idx = 1562, thread_Sn = 1.000015
+Thread 22: start_idx = 1375, end_idx = 1437, thread_Sn = 1.000014
+Thread 4: start_idx = 250, end_idx = 312, thread_Sn = 1.000003
+Thread 25: start_idx = 1562, end_idx = 1625, thread_Sn = 1.000016
+Thread 27: start_idx = 1687, end_idx = 1750, thread_Sn = 1.000017
+Thread 26: start_idx = 1625, end_idx = 1687, thread_Sn = 1.000016
+Thread 3: start_idx = 187, end_idx = 250, thread_Sn = 1.000002
+Thread 20: start_idx = 1250, end_idx = 1312, thread_Sn = 1.000013
+Thread 16: start_idx = 1000, end_idx = 1062, thread_Sn = 1.000010
+Thread 21: start_idx = 1312, end_idx = 1375, thread_Sn = 1.000013
+Parallel RunTime  :  0.098172 seconds
+Final Result Sn   :  0 
+Result ||opt||^2_2 :  1.000020
+

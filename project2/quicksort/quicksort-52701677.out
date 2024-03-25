@@ -1,0 +1,59 @@
+rm -f *.o quicksort
+gcc  -c -O3 -fopenmp quicksort.c
+gcc  -c -O3 -fopenmp walltime.c
+gcc  -O3 -fopenmp quicksort.o walltime.o -o quicksort
+Running with OMP_NUM_THREADS=1, N=1000000
+Size of dataset: 1000000, elapsed time[s] 2.057789e-01 
+Running with OMP_NUM_THREADS=2, N=1000000
+Size of dataset: 1000000, elapsed time[s] 1.815978e-01 
+Running with OMP_NUM_THREADS=4, N=1000000
+Size of dataset: 1000000, elapsed time[s] 1.554996e-01 
+Running with OMP_NUM_THREADS=8, N=1000000
+Size of dataset: 1000000, elapsed time[s] 5.258270e-02 
+Running with OMP_NUM_THREADS=16, N=1000000
+Size of dataset: 1000000, elapsed time[s] 3.736268e-02 
+Running with OMP_NUM_THREADS=32, N=1000000
+Size of dataset: 1000000, elapsed time[s] 2.982890e-02 
+Running with OMP_NUM_THREADS=64, N=1000000
+Size of dataset: 1000000, elapsed time[s] 2.985093e-02 
+Running with OMP_NUM_THREADS=128, N=1000000
+Size of dataset: 1000000, elapsed time[s] 6.887733e-02 
+Running with OMP_NUM_THREADS=1, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.377371e+00 
+Running with OMP_NUM_THREADS=2, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.051726e+00 
+Running with OMP_NUM_THREADS=4, N=10000000
+Size of dataset: 10000000, elapsed time[s] 8.686363e-01 
+Running with OMP_NUM_THREADS=8, N=10000000
+Size of dataset: 10000000, elapsed time[s] 6.085063e-01 
+Running with OMP_NUM_THREADS=16, N=10000000
+Size of dataset: 10000000, elapsed time[s] 4.706789e-01 
+Running with OMP_NUM_THREADS=32, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.969972e-01 
+Running with OMP_NUM_THREADS=64, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.679744e-01 
+Running with OMP_NUM_THREADS=128, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.836535e-01 
+Running with OMP_NUM_THREADS=1, N=100000000
+Size of dataset: 100000000, elapsed time[s] 2.795995e+01 
+Running with OMP_NUM_THREADS=2, N=100000000
+Size of dataset: 100000000, elapsed time[s] 2.352265e+01 
+Running with OMP_NUM_THREADS=4, N=100000000
+Size of dataset: 100000000, elapsed time[s] 7.537824e+00 
+Running with OMP_NUM_THREADS=8, N=100000000
+Size of dataset: 100000000, elapsed time[s] 4.684798e+00 
+Running with OMP_NUM_THREADS=16, N=100000000
+Size of dataset: 100000000, elapsed time[s] 3.957619e+00 
+Running with OMP_NUM_THREADS=32, N=100000000
+Size of dataset: 100000000, elapsed time[s] 3.022478e+00 
+Running with OMP_NUM_THREADS=64, N=100000000
+Size of dataset: 100000000, elapsed time[s] 2.971538e+00 
+Running with OMP_NUM_THREADS=128, N=100000000
+Size of dataset: 100000000, elapsed time[s] 3.138570e+00 
+Running with OMP_NUM_THREADS=1, N=1000000000
+Size of dataset: 1000000000, elapsed time[s] 3.258398e+02 
+Running with OMP_NUM_THREADS=2, N=1000000000
+Size of dataset: 1000000000, elapsed time[s] 2.723030e+02 
+Running with OMP_NUM_THREADS=4, N=1000000000
+Size of dataset: 1000000000, elapsed time[s] 8.709861e+01 
+Running with OMP_NUM_THREADS=8, N=1000000000

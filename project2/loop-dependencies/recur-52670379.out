@@ -1,0 +1,15 @@
+rm -f *.o recur_seq recur_omp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O3 recur_seq.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c walltime.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O3 recur_seq.o walltime.o -o recur_seq
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O3 -fopenmp recur_omp.c walltime.o -o recur_omp -lm
+Running sequential version
+Sequential RunTime:  5.827208 seconds
+Final Result Sn   :  485165097.62511122 
+Result ||opt||^2_2 :  5884629305179574.000000
+
+Running with OMP_NUM_THREADS=32
+Parallel RunTime  :  0.030178 seconds
+Final Result Sn   :  0 
+Result ||opt||^2_2 :  1.000020
+

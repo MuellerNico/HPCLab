@@ -1,0 +1,52 @@
+rm -f *.o quicksort
+gcc  -c -O3 -fopenmp quicksort.c
+gcc  -c -O3 -fopenmp walltime.c
+gcc  -O3 -fopenmp quicksort.o walltime.o -o quicksort
+Running with OMP_NUM_THREADS=1, N=1000000
+Size of dataset: 1000000, elapsed time[s] 1.970448e-01 
+Running with OMP_NUM_THREADS=2, N=1000000
+Size of dataset: 1000000, elapsed time[s] 1.838049e-01 
+Running with OMP_NUM_THREADS=4, N=1000000
+Size of dataset: 1000000, elapsed time[s] 1.063172e-01 
+Running with OMP_NUM_THREADS=8, N=1000000
+Size of dataset: 1000000, elapsed time[s] 4.974235e-02 
+Running with OMP_NUM_THREADS=16, N=1000000
+Size of dataset: 1000000, elapsed time[s] 3.689067e-02 
+Running with OMP_NUM_THREADS=32, N=1000000
+Size of dataset: 1000000, elapsed time[s] 3.174194e-02 
+Running with OMP_NUM_THREADS=64, N=1000000
+Size of dataset: 1000000, elapsed time[s] 2.962037e-02 
+Running with OMP_NUM_THREADS=128, N=1000000
+Size of dataset: 1000000, elapsed time[s] 7.999302e-02 
+Running with OMP_NUM_THREADS=1, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.446217e+00 
+Running with OMP_NUM_THREADS=2, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.061303e+00 
+Running with OMP_NUM_THREADS=4, N=10000000
+Size of dataset: 10000000, elapsed time[s] 8.731388e-01 
+Running with OMP_NUM_THREADS=8, N=10000000
+Size of dataset: 10000000, elapsed time[s] 6.129650e-01 
+Running with OMP_NUM_THREADS=16, N=10000000
+Size of dataset: 10000000, elapsed time[s] 4.961590e-01 
+Running with OMP_NUM_THREADS=32, N=10000000
+Size of dataset: 10000000, elapsed time[s] 3.013128e-01 
+Running with OMP_NUM_THREADS=64, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.720917e-01 
+Running with OMP_NUM_THREADS=128, N=10000000
+Size of dataset: 10000000, elapsed time[s] 2.905751e-01 
+Running with OMP_NUM_THREADS=1, N=100000000
+Size of dataset: 100000000, elapsed time[s] 2.766455e+01 
+Running with OMP_NUM_THREADS=2, N=100000000
+Size of dataset: 100000000, elapsed time[s] 2.208928e+01 
+Running with OMP_NUM_THREADS=4, N=100000000
+Size of dataset: 100000000, elapsed time[s] 8.055923e+00 
+Running with OMP_NUM_THREADS=8, N=100000000
+Size of dataset: 100000000, elapsed time[s] 4.884398e+00 
+Running with OMP_NUM_THREADS=16, N=100000000
+Size of dataset: 100000000, elapsed time[s] 4.063860e+00 
+Running with OMP_NUM_THREADS=32, N=100000000
+Size of dataset: 100000000, elapsed time[s] 2.948098e+00 
+Running with OMP_NUM_THREADS=64, N=100000000
+Size of dataset: 100000000, elapsed time[s] 2.945498e+00 
+Running with OMP_NUM_THREADS=128, N=100000000
+Size of dataset: 100000000, elapsed time[s] 3.115654e+00 

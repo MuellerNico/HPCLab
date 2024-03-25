@@ -1,0 +1,200 @@
+rm -f *.o pi_serial pi_omp_critical pi_omp_reduction *.data
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O2 -fopenmp pi_serial.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O2 -fopenmp walltime.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O2 -fopenmp pi_serial.o walltime.o -o pi_serial
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O2 -fopenmp pi_omp_critical.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O2 -fopenmp pi_omp_critical.o walltime.o -o pi_omp_critical
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -c -O2 -fopenmp pi_omp_reduction.c
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/gcc -O2 -fopenmp pi_omp_reduction.o walltime.o -o pi_omp_reduction
+Running with OMP_NUM_THREADS=1 and N=1000000 ...
+pi = 3.141592653589764, N =   1000000, time = 0.00288153 secs
+pi = 3.141592653589764, N =   1000000, time = 0.00228408 secs
+pi = 3.141592653589764, N =   1000000, time = 0.00227717 secs
+Running with OMP_NUM_THREADS=2 and N=2000000 ...
+pi = 3.141592653589994, N =   2000000, time = 0.00453919 secs
+pi = 3.141592653589796, N =   2000000, time = 0.00312095 secs
+pi = 3.141592653589796, N =   2000000, time = 0.00311012 secs
+Running with OMP_NUM_THREADS=3 and N=3000000 ...
+pi = 3.141592653589610, N =   3000000, time = 0.00682611 secs
+pi = 3.141592653589739, N =   3000000, time = 0.00320286 secs
+pi = 3.141592653589739, N =   3000000, time = 0.00240616 secs
+Running with OMP_NUM_THREADS=4 and N=4000000 ...
+pi = 3.141592653589683, N =   4000000, time = 0.00915246 secs
+pi = 3.141592653589802, N =   4000000, time = 0.00328066 secs
+pi = 3.141592653589802, N =   4000000, time = 0.00269730 secs
+Running with OMP_NUM_THREADS=5 and N=5000000 ...
+pi = 3.141592653589587, N =   5000000, time = 0.01121827 secs
+pi = 3.141592653589785, N =   5000000, time = 0.00329946 secs
+pi = 3.141592653589785, N =   5000000, time = 0.00327111 secs
+Running with OMP_NUM_THREADS=6 and N=6000000 ...
+pi = 3.141592653589561, N =   6000000, time = 0.01310425 secs
+pi = 3.141592653589778, N =   6000000, time = 0.00337745 secs
+pi = 3.141592653589778, N =   6000000, time = 0.00326950 secs
+Running with OMP_NUM_THREADS=7 and N=7000000 ...
+pi = 3.141592653590019, N =   7000000, time = 0.01599309 secs
+pi = 3.141592653589813, N =   7000000, time = 0.00327544 secs
+pi = 3.141592653589814, N =   7000000, time = 0.00335290 secs
+Running with OMP_NUM_THREADS=8 and N=8000000 ...
+pi = 3.141592653590072, N =   8000000, time = 0.01665892 secs
+pi = 3.141592653589758, N =   8000000, time = 0.00338937 secs
+pi = 3.141592653589758, N =   8000000, time = 0.00308974 secs
+Running with OMP_NUM_THREADS=9 and N=9000000 ...
+pi = 3.141592653590005, N =   9000000, time = 0.01914271 secs
+pi = 3.141592653589836, N =   9000000, time = 0.00338331 secs
+pi = 3.141592653589836, N =   9000000, time = 0.00335808 secs
+Running with OMP_NUM_THREADS=10 and N=10000000 ...
+pi = 3.141592653589731, N =  10000000, time = 0.02004977 secs
+pi = 3.141592653589790, N =  10000000, time = 0.00343296 secs
+pi = 3.141592653589791, N =  10000000, time = 0.00337361 secs
+Running with OMP_NUM_THREADS=11 and N=11000000 ...
+pi = 3.141592653589258, N =  11000000, time = 0.02263572 secs
+pi = 3.141592653589835, N =  11000000, time = 0.00344528 secs
+pi = 3.141592653589835, N =  11000000, time = 0.00320457 secs
+Running with OMP_NUM_THREADS=12 and N=12000000 ...
+pi = 3.141592653589930, N =  12000000, time = 0.02442670 secs
+pi = 3.141592653589754, N =  12000000, time = 0.00344318 secs
+pi = 3.141592653589754, N =  12000000, time = 0.00323588 secs
+Running with OMP_NUM_THREADS=13 and N=13000000 ...
+pi = 3.141592653590146, N =  13000000, time = 0.02594102 secs
+pi = 3.141592653589779, N =  13000000, time = 0.00348108 secs
+pi = 3.141592653589778, N =  13000000, time = 0.00326040 secs
+Running with OMP_NUM_THREADS=14 and N=14000000 ...
+pi = 3.141592653589760, N =  14000000, time = 0.02776317 secs
+pi = 3.141592653589799, N =  14000000, time = 0.00350848 secs
+pi = 3.141592653589799, N =  14000000, time = 0.00350186 secs
+Running with OMP_NUM_THREADS=15 and N=15000000 ...
+pi = 3.141592653590057, N =  15000000, time = 0.02957802 secs
+pi = 3.141592653589834, N =  15000000, time = 0.00353539 secs
+pi = 3.141592653589834, N =  15000000, time = 0.00352863 secs
+Running with OMP_NUM_THREADS=16 and N=16000000 ...
+pi = 3.141592653590104, N =  16000000, time = 0.03180117 secs
+pi = 3.141592653589782, N =  16000000, time = 0.00363024 secs
+pi = 3.141592653589782, N =  16000000, time = 0.00550729 secs
+Running with OMP_NUM_THREADS=17 and N=17000000 ...
+pi = 3.141592653589928, N =  17000000, time = 0.03233729 secs
+pi = 3.141592653589798, N =  17000000, time = 0.00349677 secs
+pi = 3.141592653589798, N =  17000000, time = 0.00291284 secs
+Running with OMP_NUM_THREADS=18 and N=18000000 ...
+pi = 3.141592653590242, N =  18000000, time = 0.03595226 secs
+pi = 3.141592653589773, N =  18000000, time = 0.00363118 secs
+pi = 3.141592653589773, N =  18000000, time = 0.01297204 secs
+Running with OMP_NUM_THREADS=19 and N=19000000 ...
+pi = 3.141592653590277, N =  19000000, time = 0.03616690 secs
+pi = 3.141592653589801, N =  19000000, time = 0.01298926 secs
+pi = 3.141592653589802, N =  19000000, time = 0.00288057 secs
+Running with OMP_NUM_THREADS=20 and N=20000000 ...
+pi = 3.141592653589961, N =  20000000, time = 0.03953989 secs
+pi = 3.141592653589773, N =  20000000, time = 0.01069310 secs
+pi = 3.141592653589772, N =  20000000, time = 0.01095437 secs
+Running with OMP_NUM_THREADS=21 and N=21000000 ...
+pi = 3.141592653589721, N =  21000000, time = 0.03992771 secs
+pi = 3.141592653589781, N =  21000000, time = 0.00369597 secs
+pi = 3.141592653589782, N =  21000000, time = 0.02894199 secs
+Running with OMP_NUM_THREADS=22 and N=22000000 ...
+pi = 3.141592653589886, N =  22000000, time = 0.04177856 secs
+pi = 3.141592653589773, N =  22000000, time = 0.00362909 secs
+pi = 3.141592653589774, N =  22000000, time = 0.01315754 secs
+Running with OMP_NUM_THREADS=23 and N=23000000 ...
+pi = 3.141592653589804, N =  23000000, time = 0.04365218 secs
+pi = 3.141592653589809, N =  23000000, time = 0.02258098 secs
+pi = 3.141592653589809, N =  23000000, time = 0.01167947 secs
+Running with OMP_NUM_THREADS=24 and N=24000000 ...
+pi = 3.141592653590019, N =  24000000, time = 0.04558109 secs
+pi = 3.141592653589758, N =  24000000, time = 0.01389436 secs
+pi = 3.141592653589759, N =  24000000, time = 0.01497799 secs
+Running with OMP_NUM_THREADS=25 and N=25000000 ...
+pi = 3.141592653589980, N =  25000000, time = 0.04752949 secs
+pi = 3.141592653589785, N =  25000000, time = 0.00393393 secs
+pi = 3.141592653589785, N =  25000000, time = 0.00367968 secs
+Running with OMP_NUM_THREADS=26 and N=26000000 ...
+pi = 3.141592653590062, N =  26000000, time = 0.04943385 secs
+pi = 3.141592653589793, N =  26000000, time = 0.02367500 secs
+pi = 3.141592653589794, N =  26000000, time = 0.02481272 secs
+Running with OMP_NUM_THREADS=27 and N=27000000 ...
+pi = 3.141592653590002, N =  27000000, time = 0.05293430 secs
+pi = 3.141592653589779, N =  27000000, time = 0.01992949 secs
+pi = 3.141592653589779, N =  27000000, time = 0.02025737 secs
+Running with OMP_NUM_THREADS=28 and N=28000000 ...
+pi = 3.141592653590058, N =  28000000, time = 0.05483786 secs
+pi = 3.141592653589769, N =  28000000, time = 0.01870954 secs
+pi = 3.141592653589770, N =  28000000, time = 0.03142308 secs
+Running with OMP_NUM_THREADS=29 and N=29000000 ...
+pi = 3.141592653589222, N =  29000000, time = 0.05510721 secs
+pi = 3.141592653589797, N =  29000000, time = 0.02683437 secs
+pi = 3.141592653589798, N =  29000000, time = 0.00550194 secs
+Running with OMP_NUM_THREADS=30 and N=30000000 ...
+pi = 3.141592653589050, N =  30000000, time = 0.05792879 secs
+pi = 3.141592653589803, N =  30000000, time = 0.02371780 secs
+pi = 3.141592653589805, N =  30000000, time = 0.01271195 secs
+Running with OMP_NUM_THREADS=31 and N=31000000 ...
+pi = 3.141592653589357, N =  31000000, time = 0.05890258 secs
+pi = 3.141592653589783, N =  31000000, time = 0.01348596 secs
+pi = 3.141592653589783, N =  31000000, time = 0.01102954 secs
+Running with OMP_NUM_THREADS=32 and N=32000000 ...
+pi = 3.141592653589722, N =  32000000, time = 0.06080745 secs
+pi = 3.141592653589795, N =  32000000, time = 0.03623078 secs
+pi = 3.141592653589795, N =  32000000, time = 0.02349341 secs
+Running with OMP_NUM_THREADS=33 and N=33000000 ...
+pi = 3.141592653590894, N =  33000000, time = 0.06416648 secs
+pi = 3.141592653589804, N =  33000000, time = 0.01753759 secs
+pi = 3.141592653589803, N =  33000000, time = 0.01935864 secs
+Running with OMP_NUM_THREADS=34 and N=34000000 ...
+pi = 3.141592653589744, N =  34000000, time = 0.06607607 secs
+pi = 3.141592653589762, N =  34000000, time = 0.03307445 secs
+pi = 3.141592653589762, N =  34000000, time = 0.01587338 secs
+Running with OMP_NUM_THREADS=35 and N=35000000 ...
+pi = 3.141592653589472, N =  35000000, time = 0.06637417 secs
+pi = 3.141592653589805, N =  35000000, time = 0.03772745 secs
+pi = 3.141592653589806, N =  35000000, time = 0.02636846 secs
+Running with OMP_NUM_THREADS=36 and N=36000000 ...
+pi = 3.141592653589775, N =  36000000, time = 0.06835920 secs
+pi = 3.141592653589799, N =  36000000, time = 0.02660396 secs
+pi = 3.141592653589799, N =  36000000, time = 0.03404810 secs
+Running with OMP_NUM_THREADS=37 and N=37000000 ...
+pi = 3.141592653589219, N =  37000000, time = 0.07170179 secs
+pi = 3.141592653589779, N =  37000000, time = 0.02401534 secs
+pi = 3.141592653589779, N =  37000000, time = 0.00336280 secs
+Running with OMP_NUM_THREADS=38 and N=38000000 ...
+pi = 3.141592653590075, N =  38000000, time = 0.07307532 secs
+pi = 3.141592653589790, N =  38000000, time = 0.02908681 secs
+pi = 3.141592653589790, N =  38000000, time = 0.01775809 secs
+Running with OMP_NUM_THREADS=39 and N=39000000 ...
+pi = 3.141592653589842, N =  39000000, time = 0.07403138 secs
+pi = 3.141592653589754, N =  39000000, time = 0.02753423 secs
+pi = 3.141592653589754, N =  39000000, time = 0.02573565 secs
+Running with OMP_NUM_THREADS=40 and N=40000000 ...
+pi = 3.141592653588801, N =  40000000, time = 0.07601733 secs
+pi = 3.141592653589774, N =  40000000, time = 0.01934457 secs
+pi = 3.141592653589773, N =  40000000, time = 0.00913739 secs
+Running with OMP_NUM_THREADS=41 and N=41000000 ...
+pi = 3.141592653590616, N =  41000000, time = 0.07794475 secs
+pi = 3.141592653589800, N =  41000000, time = 0.02161436 secs
+pi = 3.141592653589799, N =  41000000, time = 0.02506744 secs
+Running with OMP_NUM_THREADS=42 and N=42000000 ...
+pi = 3.141592653589331, N =  42000000, time = 0.07983976 secs
+pi = 3.141592653589786, N =  42000000, time = 0.03667222 secs
+pi = 3.141592653589786, N =  42000000, time = 0.02799453 secs
+Running with OMP_NUM_THREADS=43 and N=43000000 ...
+pi = 3.141592653589658, N =  43000000, time = 0.08301006 secs
+pi = 3.141592653589820, N =  43000000, time = 0.02733683 secs
+pi = 3.141592653589819, N =  43000000, time = 0.02656094 secs
+Running with OMP_NUM_THREADS=44 and N=44000000 ...
+pi = 3.141592653589563, N =  44000000, time = 0.08375620 secs
+pi = 3.141592653589794, N =  44000000, time = 0.02772324 secs
+pi = 3.141592653589794, N =  44000000, time = 0.02567252 secs
+Running with OMP_NUM_THREADS=45 and N=45000000 ...
+pi = 3.141592653589638, N =  45000000, time = 0.08570773 secs
+pi = 3.141592653589799, N =  45000000, time = 0.04941564 secs
+pi = 3.141592653589799, N =  45000000, time = 0.03729848 secs
+Running with OMP_NUM_THREADS=46 and N=46000000 ...
+pi = 3.141592653589542, N =  46000000, time = 0.08875075 secs
+pi = 3.141592653589829, N =  46000000, time = 0.02046980 secs
+pi = 3.141592653589829, N =  46000000, time = 0.02843426 secs
+Running with OMP_NUM_THREADS=47 and N=47000000 ...
+pi = 3.141592653589415, N =  47000000, time = 0.08947040 secs
+pi = 3.141592653589810, N =  47000000, time = 0.02663896 secs
+pi = 3.141592653589810, N =  47000000, time = 0.03911585 secs
+Running with OMP_NUM_THREADS=48 and N=48000000 ...
+pi = 3.141592653589363, N =  48000000, time = 0.09452486 secs
+pi = 3.141592653589802, N =  48000000, time = 0.03426714 secs
+pi = 3.141592653589802, N =  48000000, time = 0.03896553 secs
