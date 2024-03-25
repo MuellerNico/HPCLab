@@ -34,15 +34,17 @@ int main() {
 
   // TODO Parallelize the histogram computation
   time_start = walltime();
-  std::vector<long> dist_private(BINS, 0);
-  #pragma omp parallel for private(dist_private)
-  for (long i = 0; i < VEC_SIZE; ++i) {
-    dist_private[vec[i]]++;
-  }
-
-  for (int i = 0; i < BINS; ++i) {
-    //#pragma omp atomic // should not be in omp block right?
-    dist[i] += dist_private[i];
+  #pragma omp parallel
+  {
+    std::vector<long> dist_private(BINS, 0);
+    #pragma omp for
+    for (long i = 0; i < VEC_SIZE; ++i) {
+      dist_private[vec[i]]++;
+    }
+    #pragma omp critical
+    for (int i = 0; i < BINS; ++i) {
+      dist[i] += dist_private[i];
+    }
   }
   time_end = walltime();
 
