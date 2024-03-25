@@ -24,11 +24,13 @@ int main(int argc, char **argv) {
   double time_start = walltime();
   // do the calculation
   cy = MIN_Y;
+  #pragma omp parallel for private(cx, x, y, x2, y2) reduction(+:nTotalIterationsCount)
   for (j = 0; j < IMAGE_HEIGHT; j++) {
     cx = MIN_X;
     for (i = 0; i < IMAGE_WIDTH; i++) {
-      x = cx;
-      y = cy;
+       // x and y are the real and imaginary parts of the complex number z = x + i * y
+      x = cx; // z1
+      y = cy; // z1
       x2 = x * x;
       y2 = y * y;
       // compute the orbit z, f(z), f^2(z), f^3(z), ...
@@ -37,13 +39,21 @@ int main(int argc, char **argv) {
       int n = 0;
       // TODO
       // >>>>>>>> CODE IS MISSING
-
+      while (x2 + y2 <= 4 && n < MAX_ITERS) {
+              y = 2 * x * y + cy;
+              x = x2 - y2 + cx;
+              x2 = x * x;
+              y2 = y * y;
+              n++;
+       }
+       nTotalIterationsCount += n;
       // <<<<<<<< CODE IS MISSING
       // n indicates if the point belongs to the mandelbrot set
       // plot the number of iterations at point (i, j)
       int c = ((long)n * 255) / MAX_ITERS;
       png_plot(pPng, i, j, c, c, c);
       cx += fDeltaX;
+      // keep track of total number of iterations
     }
     cy += fDeltaY;
   }

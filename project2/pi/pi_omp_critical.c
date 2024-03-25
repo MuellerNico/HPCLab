@@ -1,6 +1,7 @@
 #include <stdio.h> /* printf */
 #include <stdlib.h> /* atol */
 #include "walltime.h"
+#include <omp.h> // OpenMP
 
 int main(int argc, char *argv[]) {
   long int N = 1000000;
@@ -14,11 +15,10 @@ int main(int argc, char *argv[]) {
   #pragma omp parallel
   {
     double partial_sum = 0.;
-    const int nthreads = omp_get_num_threads();
-    const int tid = omp_get_thread_num();
-    const int i_beg = tid*N/nthreads;
-    const int i_end = (tid + 1)*N/nthreads;
-    #pragma omp for
+    int nthreads = omp_get_num_threads();
+    int tid = omp_get_thread_num();
+    int i_beg = tid*N/nthreads;
+    int i_end = (tid + 1)*N/nthreads;
     for (int i = i_beg; i < i_end; ++i){
       const double x = (i + 0.5)*h;
       partial_sum += 4.0 / (1.0 + x*x);

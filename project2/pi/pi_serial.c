@@ -1,6 +1,7 @@
 #include <stdio.h> /* printf */
 #include <stdlib.h> /* atol */
 #include "walltime.h"
+#include <omp.h> // OpenMP
 
 int main(int argc, char *argv[]) {
   long int N = 1000000;

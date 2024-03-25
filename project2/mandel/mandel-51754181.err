@@ -1,0 +1,7 @@
+
+Currently Loaded Modules:
+  1) StdEnv   2) gcc/11.4.0
+
+ 
+
+slurmstepd: error: *** JOB 51754181 ON eu-a2p-278 CANCELLED AT 2024-03-18T18:10:10 DUE TO TIME LIMIT ***
