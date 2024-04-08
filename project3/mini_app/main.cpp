@@ -240,7 +240,7 @@ int main(int argc, char* argv[]) {
               << float(iters_cg)/timespent << " iters/second" << std::endl;
     std::cout << iters_newton << " newton iterations" << std::endl;
     std::cout << std::string(80, '-') << std::endl;
-    std::cout << "### " << threads << ", "
+    std::cout << "### " << 69 << ", " // threads
                         << options.nx << ", "
                         << options.nt << ", "
                         << iters_cg   << ", "
