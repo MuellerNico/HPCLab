@@ -7,7 +7,7 @@
 #SBATCH --mem-per-cpu=1024
 #SBATCH --open-mode=truncate
 
-#SBATCH --constraint="EPYC_7H12" # EPYC 7H12 for phase I, EPYC 7763 for phase II
+#SBATCH --constraint="EPYC_7763" #EPYC 7H12 for phase I, EPYC 7763 for phase II
 
 module load gcc
 module list
