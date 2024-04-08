@@ -17,6 +17,7 @@
 #include <cstring>
 
 #include <stdio.h>
+#include <omp.h>
 
 #include "data.h"
 #include "linalg.h"
@@ -102,9 +103,17 @@ int main(int argc, char* argv[]) {
     int max_newton_iters = 50;
     double tolerance     = 1.e-6;
 
+    unsigned threads = 1;
+    const char* version = "C++ Serial";
+    #ifdef _OPENMP
+    threads = omp_get_max_threads();
+    version = "C++ OpenMP";
+    #endif
+
     std::cout << std::string(80, '=') << std::endl;
     std::cout << "                      Welcome to mini-stencil!" << std::endl;
-    std::cout << "version   :: C++ Serial" << std::endl;
+    std::cout << "version   :: " << version << std::endl;
+    std::cout << "threads   :: " << threads << std::endl;
     std::cout << "mesh      :: " << options.nx << " * " << options.nx
                                  << " dx = " << options.dx << std::endl;
     std::cout << "time      :: " << nt << " time steps from 0 .. "
@@ -240,7 +249,7 @@ int main(int argc, char* argv[]) {
               << float(iters_cg)/timespent << " iters/second" << std::endl;
     std::cout << iters_newton << " newton iterations" << std::endl;
     std::cout << std::string(80, '-') << std::endl;
-    std::cout << "### " << 69 << ", " // threads
+    std::cout << "### " << threads << ", " // threads
                         << options.nx << ", "
                         << options.nt << ", "
                         << iters_cg   << ", "
