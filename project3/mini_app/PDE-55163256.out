@@ -1,0 +1,120 @@
+rm -f main walltime.o   stats.o   data.o   operators.o   linalg.o   main.o output.*
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c walltime.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c stats.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c data.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c operators.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c linalg.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c main.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp walltime.o   stats.o   data.o   operators.o   linalg.o   main.o -o main
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 22.8638 seconds
+13494 conjugate gradient iterations, at rate of 590.19 iters/second
+2014 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13494, 2014, 22.8638 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 29.3861 seconds
+13329 conjugate gradient iterations, at rate of 453.581 iters/second
+2008 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13329, 2008, 29.3861 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 79.8652 seconds
+13622 conjugate gradient iterations, at rate of 170.562 iters/second
+2019 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13622, 2019, 79.8652 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 67.6598 seconds
+13601 conjugate gradient iterations, at rate of 201.02 iters/second
+2017 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13601, 2017, 67.6598 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 26.5963 seconds
+13386 conjugate gradient iterations, at rate of 503.304 iters/second
+2011 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13386, 2011, 26.5963 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 31.5662 seconds
+13373 conjugate gradient iterations, at rate of 423.65 iters/second
+2009 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13373, 2009, 31.5662 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 66.6288 seconds
+13330 conjugate gradient iterations, at rate of 200.063 iters/second
+2008 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13330, 2008, 66.6288 ###
+Goodbye!

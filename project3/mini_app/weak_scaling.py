@@ -13,8 +13,8 @@ for i in range(3):
     runtime = column_3[i*4:(i+1)*4]
     plt.plot(cpu, runtime, label='base resolution = %d' % res)
 
-plt.xscale('log', base=2)
-plt.yscale('log')
+#plt.xscale('log', base=2)
+#plt.yscale('log')
 plt.xlabel('N_CPU')
 plt.ylabel('Time to solution (s)')
 plt.legend()

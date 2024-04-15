@@ -14,7 +14,7 @@ for i in range(5):
     plt.plot(cpu, runtime, label='n = %d' % res)
 
 plt.xscale('log', base=2)
-plt.yscale('log')
+#plt.yscale('log')
 plt.xlabel('N_CPU')
 plt.ylabel('Time to solution (s)')
 plt.legend()

@@ -1,0 +1,88 @@
+rm -f main walltime.o   stats.o   data.o   operators.o   linalg.o   main.o output.*
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c walltime.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c stats.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c data.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c operators.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c linalg.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp -c main.cpp
+/cluster/apps/gcc-4.8.5/gcc-11.4.0-xxnwhndqaqpuzs4l4ty4yj5tg2cexcg4/bin/g++ -O3 -fopenmp walltime.o   stats.o   data.o   operators.o   linalg.o   main.o -o main
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 56.0057 seconds
+13431 conjugate gradient iterations, at rate of 239.815 iters/second
+2011 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13431, 2011, 56.0057 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 88.608 seconds
+13436 conjugate gradient iterations, at rate of 151.634 iters/second
+2012 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13436, 2012, 88.608 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 26.0902 seconds
+13431 conjugate gradient iterations, at rate of 514.791 iters/second
+2011 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13431, 2011, 26.0902 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 109.238 seconds
+13534 conjugate gradient iterations, at rate of 123.895 iters/second
+2015 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13534, 2015, 109.238 ###
+Goodbye!
+Running with OMP_NUM_THREADS=64, n=
+================================================================================
+                      Welcome to mini-stencil!
+version   :: C++ OpenMP
+threads   :: 64
+mesh      :: 2048 * 2048 dx = 0.00048852
+time      :: 1000 time steps from 0 .. 0.005
+iteration :: CG 300, Newton 50, tolerance 1e-06
+================================================================================
+--------------------------------------------------------------------------------
+simulation took 26.6181 seconds
+13387 conjugate gradient iterations, at rate of 502.928 iters/second
+2010 newton iterations
+--------------------------------------------------------------------------------
+### 64, 2048, 1000, 13387, 2010, 26.6181 ###
+Goodbye!
