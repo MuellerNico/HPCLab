@@ -258,5 +258,12 @@ int main(int argc, char* argv[]) {
               << " ###" << std::endl;
     std::cout << "Goodbye!" << std::endl;
 
+    // write benchmark to file
+    std::ofstream benchmark("benchmark.txt", std::ios::app);
+    benchmark << threads << ", " // threads
+              << options.nx << ", "
+              << timespent
+              << std::endl;
+    benchmark.close();
     return 0;
 }
