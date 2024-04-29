@@ -1,0 +1,24 @@
+rm -f *.o powermethod_rows
+mpicc -c -O3  powermethod_rows.c
+mpicc -c -O3  walltime.c
+mpicc -lm  powermethod_rows.o walltime.o -o powermethod_rows
+[Proc   2] Doing rows 126 to 188
+[Proc   3] Doing rows 189 to 251
+[Proc   4] Doing rows 252 to 314
+[Proc   5] Doing rows 315 to 377
+[Proc   6] Doing rows 378 to 440
+[Proc   7] Doing rows 441 to 503
+[Proc   8] Doing rows 504 to 565
+[Proc   9] Doing rows 566 to 627
+[Proc  10] Doing rows 628 to 689
+[Proc  11] Doing rows 690 to 751
+[Proc  12] Doing rows 752 to 813
+[Proc  13] Doing rows 814 to 875
+[Proc  14] Doing rows 876 to 937
+[Proc  15] Doing rows 938 to 999
+Doing 3000 power iterations on 1000x1000 matrix distributed row-wise over 16 processes...
+[Proc   0] Doing rows 0 to 62
+iteration / theta/ error:    0 /         1.00000 /     2.286104331507951e-16
+Power method: Converged in 0 iteration(s) to largest absolute eigenvalue theta = 1.000000 in 0.000493 second(s) time.
+### 16, 1000, 0, 1.000000, 0.000493 ###
+[Proc   1] Doing rows 63 to 125

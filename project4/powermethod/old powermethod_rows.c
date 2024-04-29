@@ -160,31 +160,15 @@ int main(int argc, char* argv[]) {
     for (int i_global = 0; i_global < n; ++i_global) {
       v[i_global] = y[i_global] / norm;
     }
-    
     // Matrix-vector multiply: y = A v
     // Hint: Compute only the local rows, save them in the buffer y_local
     //       and synchronize the result using MPI_Allgather / MPI_Allgatherv.
     for (int i_local = 0; i_local < nrows_local; ++i_local) {
-      y_local[i_local] = 0.;
+      y[i_local] = 0.;
       for (int j_global = 0; j_global < n; ++j_global) {
-        y_local[i_local] += A[i_local*n + j_global]*v[j_global];
+        y[i_local] += A[i_local*n + j_global]*v[j_global];
       }
     }
-    // Synchronize y_local
-    int* recvcounts = (int*) calloc(size, sizeof(int)); 
-    int* displs = (int*) calloc(size, sizeof(int));
-    for (int i = 0; i < size; ++i) {
-      if (i < n % size) {
-        recvcounts[i] = (n / size + 1); // number of elements to receive
-        displs[i] = i*(n / size + 1); // displacement
-      } else {
-        recvcounts[i] = (n / size);
-        displs[i] = n % size*(n / size + 1) + (i - n % size)*(n / size);
-      }
-    }
-    MPI_Allgatherv(y_local, nrows_local, MPI_DOUBLE, y, recvcounts, displs,
-                   MPI_DOUBLE, MPI_COMM_WORLD);
-
     // Compute eigenvalue: theta = v^T y
     theta = 0.;
     for (int i_global = 0; i_global < n; ++i_global) {
@@ -216,12 +200,6 @@ int main(int argc, char* argv[]) {
               (time_end - time_start));
       printf("### %d, %d, %d, %f, %f ###\n", size, n, iter, theta,
              (time_end - time_start));
-
-    // performance
-    FILE *fp;
-    fp = fopen("bench.csv", "a");
-    fprintf(fp, "%d,%d,%d,%f,%f\n", size, n, iter, theta, (time_end - time_start));
-    fclose(fp);
   }
 
   // Free
