@@ -25,6 +25,8 @@
 #include "walltime.h"
 #include "stats.h"
 
+#include <mpi.h>
+
 using namespace data;
 using namespace linalg;
 using namespace operators;
@@ -110,28 +112,37 @@ int main(int argc, char* argv[]) {
 
     // TODO: initialize MPI
     int size = 1, rank = 0;
-
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    assert(size > 0);
     // TODO: initialize sub-domain (data.{h,cpp})
     domain.init(rank, size, options);
-    // domain.print(); // for debugging
+    domain.print(); // for debugging
     int nx = domain.nx;
     int ny = domain.ny;
     int N  = domain.N;
     int nt  = options.nt;
 
     // TODO: Modify welcome message
-    std::cout << std::string(80, '=') << std::endl;
-    std::cout << "                      Welcome to mini-stencil!" << std::endl;
-    std::cout << "version   :: C++ Serial" << std::endl;
-    std::cout << "mesh      :: " << options.nx << " * " << options.nx
-                                 << " dx = " << options.dx << std::endl;
-    std::cout << "time      :: " << nt << " time steps from 0 .. "
-                                       << options.nt*options.dt << std::endl;
-    std::cout << "iteration :: " << "CG "          << max_cg_iters
-                                 << ", Newton "    << max_newton_iters
-                                 << ", tolerance " << tolerance << std::endl;
-    std::cout << std::string(80, '=') << std::endl;
-
+    if (rank == 0) {
+        std::string version = "C++ MPI";
+        if (size == 1) {
+            version = "C++ Serial";
+        }
+        std::cout << std::string(80, '=') << std::endl;
+        std::cout << "                      Welcome to mini-stencil!" << std::endl;
+        std::cout << "version   :: " << version << std::endl;
+        std::cout << "processes :: " << size << std::endl;
+        std::cout << "mesh      :: " << options.nx << " * " << options.nx
+                                    << " dx = " << options.dx << std::endl;
+        std::cout << "time      :: " << nt << " time steps from 0 .. "
+                                        << options.nt*options.dt << std::endl;
+        std::cout << "iteration :: " << "CG "          << max_cg_iters
+                                    << ", Newton "    << max_newton_iters
+                                    << ", tolerance " << tolerance << std::endl;
+        std::cout << std::string(80, '=') << std::endl;
+    }
     // allocate global fields
     y_new.init(nx, ny);
     y_old.init(nx, ny);
@@ -223,6 +234,7 @@ int main(int argc, char* argv[]) {
                       << " ERROR : nonlinear iterations failed to converge" << std::endl;;
             break;
         }
+        // ToDo?? MPI_Barrier(MPI_COMM_WORLD);
     }
 
     // get times
@@ -238,6 +250,7 @@ int main(int argc, char* argv[]) {
 
     // metadata
     // TODO: Only once process should do the following
+    if (rank == 0)
     {
         std::ofstream fid("output.bov");
         fid << "TIME: " << options.nt*options.dt << std::endl;
@@ -258,6 +271,7 @@ int main(int argc, char* argv[]) {
     // print table summarizing results
     double timespent = time_end - time_start;
     // TODO: Only once process should do the following
+    if (rank == 0)
     {
         std::cout << std::string(80, '-') << std::endl;
         std::cout << "simulation took " << timespent << " seconds" << std::endl;
@@ -276,7 +290,10 @@ int main(int argc, char* argv[]) {
         std::cout << "Goodbye!" << std::endl;
     }
 
+    // free comm
+    MPI_Comm_free(&domain.comm_cart);
     // TODO: finalize MPI
+    MPI_Finalize();
 
     return 0;
 }

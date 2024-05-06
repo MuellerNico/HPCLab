@@ -9,6 +9,7 @@
 #include "data.h"
 #include "operators.h"
 #include "stats.h"
+#include "linalg.h"
 
 namespace operators {
 
@@ -40,6 +41,34 @@ void diffusion(data::Field const& s_old, data::Field const& s_new,
 
     // TODO: exchange the ghost cells using non-blocking point-to-point
     //       communication
+    // copying the boundary values to the buffers
+    for (int i = 0; i < nx; i++) {
+        buffN[i] = s_new(i, 0);
+        buffS[i] = s_new(i, ny - 1);
+    }
+    for (int j = 0; j < ny; j++) {
+        buffW[j] = s_new(0, j);
+        buffE[j] = s_new(nx - 1, j);
+    }
+
+    int num_reqs = 0;
+    MPI_Request reqs[8];
+    if (domain.neighbour_north >= 0) {
+        MPI_Isend(buffN.data(), nx, MPI_DOUBLE, domain.neighbour_north, 0, domain.comm_cart, &reqs[num_reqs++]);
+        MPI_Irecv(bndN.data(), nx, MPI_DOUBLE, domain.neighbour_north, 1, domain.comm_cart, &reqs[num_reqs++]);
+    }
+    if (domain.neighbour_south >= 0) {
+        MPI_Isend(buffS.data(), nx, MPI_DOUBLE, domain.neighbour_south, 1, domain.comm_cart, &reqs[num_reqs++]);
+        MPI_Irecv(bndS.data(), nx, MPI_DOUBLE, domain.neighbour_south, 0, domain.comm_cart, &reqs[num_reqs++]);
+    }
+    if (domain.neighbour_west >= 0) {
+        MPI_Isend(buffW.data(), ny, MPI_DOUBLE, domain.neighbour_west, 2, domain.comm_cart, &reqs[num_reqs++]);
+        MPI_Irecv(bndW.data(), ny, MPI_DOUBLE, domain.neighbour_west, 3, domain.comm_cart, &reqs[num_reqs++]);
+    }
+    if (domain.neighbour_east >= 0) {
+        MPI_Isend(buffE.data(), ny, MPI_DOUBLE, domain.neighbour_east, 3, domain.comm_cart, &reqs[num_reqs++]);
+        MPI_Irecv(bndE.data(), ny, MPI_DOUBLE, domain.neighbour_east, 2, domain.comm_cart, &reqs[num_reqs++]);
+    }
 
     // the interior grid points
     for (int j=1; j < jend; j++) {
@@ -51,6 +80,9 @@ void diffusion(data::Field const& s_old, data::Field const& s_new,
                    + beta * s_new(i,j) * (1.0 - s_new(i,j));
         }
     }
+
+    // wait for boundary data to arrive (but overlap messaging with computation of interior gridpoints)
+    MPI_Waitall(num_reqs, reqs, MPI_STATUSES_IGNORE);
 
     // east boundary
     {
