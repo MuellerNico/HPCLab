@@ -46,28 +46,39 @@ void cg_init(int nx, int ny) {
 // computes the inner product of x and y
 // x and y are vectors on length N
 double hpc_dot(Field const& x, Field const& y) {
-    double result = 0;
+    double local_result = 0.0;
+    double global_result = 0.0;
     int N = y.length();
-    // compute local result
+    // Compute local dot product
     for (int i = 0; i < N; i++) {
-        result += x[i] * y[i];
+        local_result += x[i] * y[i];
     }
 
-    return result;
+    // Reduce all local results to a global result
+    MPI_Allreduce(&local_result, &global_result, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+
+    return global_result;
 }
+
 
 // computes the 2-norm of x
 // x is a vector on length N
 double hpc_norm2(Field const& x) {
-    double result = 0;
+    double local_result = 0.0;
+    double global_result = 0.0;
     int N = x.length();
-    // compute local result
+
+    // Compute local sum of squares
     for (int i = 0; i < N; i++) {
-        result += x[i] * x[i];
+        local_result += x[i] * x[i];
     }
 
-    return sqrt(result);
+    // Reduce all local results to a global sum and take the square root at the end
+    MPI_Allreduce(&local_result, &global_result, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+
+    return sqrt(global_result);
 }
+
 
 // sets entries in a vector to value
 // x is a vector on length N

@@ -31,10 +31,11 @@ void SubDomain::init(int mpi_rank, int mpi_size,
                      Discretization& discretization) {
     // TODO: determine the number of sub-domains in the x and y dimensions
     //       using MPI_Dims_create
+    
     int dims[2];
     MPI_Dims_create(mpi_size, 2, dims);
-    ndomy = dims[0];
-    ndomx = dims[1];
+    ndomx = dims[0];
+    ndomy = dims[1];
 
     // TODO: create a 2D non-periodic Cartesian topology using MPI_Cart_create
     int periods[2] = {0, 0};
@@ -44,18 +45,18 @@ void SubDomain::init(int mpi_rank, int mpi_size,
     // MPI_Cart_coords
     int coords[2] = {0, 0};
     MPI_Cart_coords(comm_cart, mpi_rank, 2, coords);
-    domy = coords[0];
-    domx = coords[1];
+    domx = coords[0];
+    domy = coords[1];
+    assert(domx >= 0 && domy >= 0);
 
     // TODO: set neighbours for all directions using MPI_Cart_shift
-    MPI_Cart_shift(comm_cart, 0, 1, &neighbour_north, &neighbour_south);
+    MPI_Cart_shift(comm_cart, 0, 1, &neighbour_south, &neighbour_north);
     MPI_Cart_shift(comm_cart, 1, 1, &neighbour_west, &neighbour_east);
-
     // get bounding box
     nx = discretization.nx / ndomx;
     ny = discretization.nx / ndomy;
-    startx = (domx)*nx+1;
-    starty = (domy)*ny+1;
+    startx = (domx)*nx;
+    starty = (domy)*ny;
     endx = startx + nx -1;
     endy = starty + ny -1;
 
@@ -68,7 +69,7 @@ void SubDomain::init(int mpi_rank, int mpi_size,
 
 // print domain decomposition information to stdout
 void SubDomain::print() {
-    MPI_Barrier(MPI_COMM_WORLD);
+    MPI_Barrier(comm_cart);
     for (int irank = 0; irank < size; irank++) {
         if (irank == rank) {
             std::cout << "rank " << rank << " / " << size
@@ -78,10 +79,12 @@ void SubDomain::print() {
                       << " neigh E:W " << neighbour_east
                       << ":"           << neighbour_west
                       << " local dims " << nx << " x " << ny
+                      << " local domain [" << startx << ", " << endx << "] x [" << starty << ", " << endy << "]"
                       << std::endl;
         }
-        MPI_Barrier(MPI_COMM_WORLD);
+        MPI_Barrier(comm_cart);
     }
+    MPI_Barrier(comm_cart);
 }
 
 }

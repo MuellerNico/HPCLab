@@ -1,0 +1,531 @@
+
+Currently Loaded Modules:
+  1) StdEnv   2) gcc/11.4.0   3) openmpi/4.1.4
+
+ 
+
+[eu-a2p-277:128254] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:128254] *** reported by process [4089577473,0]
+[eu-a2p-277:128254] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:128254] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:128254] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:128254] ***    and potentially your MPI job)
+[eu-a2p-277:128299] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:128299] *** reported by process [4061200385,0]
+[eu-a2p-277:128299] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:128299] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:128299] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:128299] ***    and potentially your MPI job)
+[eu-a2p-277:128351] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:128351] *** reported by process [4065984513,0]
+[eu-a2p-277:128351] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:128351] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:128351] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:128351] ***    and potentially your MPI job)
+[eu-a2p-277:128406] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:128406] *** reported by process [4071227393,0]
+[eu-a2p-277:128406] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:128406] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:128406] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:128406] ***    and potentially your MPI job)
+[eu-a2p-277:128439] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:128439] *** reported by process [4068802561,0]
+[eu-a2p-277:128439] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:128439] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:128439] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:128439] ***    and potentially your MPI job)
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+[eu-a2p-277:130148] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:130148] *** reported by process [4216848385,0]
+[eu-a2p-277:130148] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:130148] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:130148] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:130148] ***    and potentially your MPI job)
+[eu-a2p-277:130180] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:130180] *** reported by process [4223336449,0]
+[eu-a2p-277:130180] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:130180] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:130180] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:130180] ***    and potentially your MPI job)
+[eu-a2p-277:130213] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:130213] *** reported by process [4221239297,0]
+[eu-a2p-277:130213] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:130213] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:130213] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:130213] ***    and potentially your MPI job)
+[eu-a2p-277:130245] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:130245] *** reported by process [4227530753,0]
+[eu-a2p-277:130245] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:130245] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:130245] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:130245] ***    and potentially your MPI job)
+[eu-a2p-277:130278] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:130278] *** reported by process [4225368065,0]
+[eu-a2p-277:130278] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:130278] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:130278] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:130278] ***    and potentially your MPI job)
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+[eu-a2p-277:01627] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:01627] *** reported by process [23068673,0]
+[eu-a2p-277:01627] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:01627] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:01627] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:01627] ***    and potentially your MPI job)
+[eu-a2p-277:01660] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:01660] *** reported by process [21037057,0]
+[eu-a2p-277:01660] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:01660] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:01660] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:01660] ***    and potentially your MPI job)
+[eu-a2p-277:01692] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:01692] *** reported by process [27328513,0]
+[eu-a2p-277:01692] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:01692] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:01692] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:01692] ***    and potentially your MPI job)
+[eu-a2p-277:01724] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:01724] *** reported by process [25296897,0]
+[eu-a2p-277:01724] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:01724] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:01724] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:01724] ***    and potentially your MPI job)
+[eu-a2p-277:01758] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:01758] *** reported by process [31653889,0]
+[eu-a2p-277:01758] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:01758] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:01758] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:01758] ***    and potentially your MPI job)
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 64
+slots that were requested by the application:
+
+  ./main
+
+Either request fewer slots for your application, or make more slots
+available for use.
+
+A "slot" is the Open MPI term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which Open MPI processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, Open MPI defaults to the number of processor cores
+
+In all the above cases, if you want Open MPI to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --oversubscribe option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------

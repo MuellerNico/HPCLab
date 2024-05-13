@@ -35,10 +35,47 @@ using namespace stats;
 // =============================================================================
 void write_binary(std::string fname, Field &u, SubDomain &domain,
                   Discretization &options) {
-    // TODO: Implement output with MPI-IO
-    FILE* output = fopen(fname.c_str(), "w");
+    // old
+    /*FILE* output = fopen(fname.c_str(), "w");
     fwrite(u.data(), sizeof(double), options.nx * options.nx, output);
-    fclose(output);
+    fclose(output);*/
+
+    // TODO: Implement output with MPI-IO
+    /*if (domain.rank == 2) {
+        hpc_fill(u, 0.0);
+    }*/
+    char* fname_bin = (char*) malloc((strlen(fname.c_str()) + 1 + 4)*sizeof(char));
+    strcpy(fname_bin, fname.c_str());
+    MPI_File filehandle;
+    MPI_File_open(MPI_COMM_WORLD, fname_bin, MPI_MODE_CREATE | MPI_MODE_WRONLY,
+                MPI_INFO_NULL, &filehandle);
+
+    // Create sub-array type (each process writes its sub-domain part into the
+    // file containing (full!) domain)
+    // Note the row-major order storage format (C order)
+    int sizes[2]    = {options.nx, options.nx};
+    int subsizes[2] = {domain.nx, domain.ny};   
+    int start[2]    = {domain.startx, domain.starty};
+    //std::cout << "process: " << domain.rank << std::endl;
+    //std::cout << "sizes: " << sizes[0] << ", " << sizes[1] << std::endl;
+    //std::cout << "subsizes: " << subsizes[0] << ", " << subsizes[1] << std::endl;
+    //std::cout << "start: " << start[0] << ", " << start[1] << std::endl;
+    //std::cout << "end: " << domain.endx << ", " << domain.endy << std::endl;
+    MPI_Datatype filetype;
+    MPI_Type_create_subarray(2, sizes, subsizes, start, MPI_ORDER_C, MPI_DOUBLE,
+                            &filetype);
+    MPI_Type_commit(&filetype);
+
+    // Set view and write file
+    MPI_Offset disp = 0;
+    MPI_File_set_view(filehandle, disp, MPI_DOUBLE, filetype, "native",
+                    MPI_INFO_NULL);
+    MPI_File_write_all(filehandle, u.data(), domain.nx*domain.ny, MPI_DOUBLE,
+                        MPI_STATUS_IGNORE);
+    // Free file type
+    MPI_Type_free(&filetype);
+    // Close file
+    MPI_File_close(&filehandle);
 }
 
 // read command line arguments
@@ -234,7 +271,7 @@ int main(int argc, char* argv[]) {
                       << " ERROR : nonlinear iterations failed to converge" << std::endl;;
             break;
         }
-        // ToDo?? MPI_Barrier(MPI_COMM_WORLD);
+        //MPI_Barrier(domain.comm_cart);
     }
 
     // get times
@@ -288,6 +325,14 @@ int main(int argc, char* argv[]) {
                             << timespent
                   << " ###" << std::endl;
         std::cout << "Goodbye!" << std::endl;
+
+        // write benchmark file
+        std::ofstream bench("bench.csv", std::ios::app);
+        bench << size << ", "
+              << options.nx << ", "
+              << timespent
+              << std::endl;
+        bench.close();
     }
 
     // free comm

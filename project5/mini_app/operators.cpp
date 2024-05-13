@@ -42,9 +42,11 @@ void diffusion(data::Field const& s_old, data::Field const& s_new,
     // TODO: exchange the ghost cells using non-blocking point-to-point
     //       communication
     // copying the boundary values to the buffers
+    //std::cout << "buffer xdim,ydim: " << buffN.xdim() << "," << buffN.ydim() << std::endl;
+    //std::cout << "bnd xdim,ydim: " << bndN.xdim() << "," << bndN.ydim() << std::endl;
     for (int i = 0; i < nx; i++) {
-        buffN[i] = s_new(i, 0);
-        buffS[i] = s_new(i, ny - 1);
+        buffN[i] = s_new(i, ny-1);
+        buffS[i] = s_new(i, 0);
     }
     for (int j = 0; j < ny; j++) {
         buffW[j] = s_new(0, j);
@@ -53,22 +55,23 @@ void diffusion(data::Field const& s_old, data::Field const& s_new,
 
     int num_reqs = 0;
     MPI_Request reqs[8];
-    if (domain.neighbour_north >= 0) {
+    if (domain.neighbour_north != MPI_PROC_NULL) {
         MPI_Isend(buffN.data(), nx, MPI_DOUBLE, domain.neighbour_north, 0, domain.comm_cart, &reqs[num_reqs++]);
         MPI_Irecv(bndN.data(), nx, MPI_DOUBLE, domain.neighbour_north, 1, domain.comm_cart, &reqs[num_reqs++]);
     }
-    if (domain.neighbour_south >= 0) {
+    if (domain.neighbour_south != MPI_PROC_NULL) {
         MPI_Isend(buffS.data(), nx, MPI_DOUBLE, domain.neighbour_south, 1, domain.comm_cart, &reqs[num_reqs++]);
         MPI_Irecv(bndS.data(), nx, MPI_DOUBLE, domain.neighbour_south, 0, domain.comm_cart, &reqs[num_reqs++]);
     }
-    if (domain.neighbour_west >= 0) {
+    if (domain.neighbour_west != MPI_PROC_NULL) {
         MPI_Isend(buffW.data(), ny, MPI_DOUBLE, domain.neighbour_west, 2, domain.comm_cart, &reqs[num_reqs++]);
         MPI_Irecv(bndW.data(), ny, MPI_DOUBLE, domain.neighbour_west, 3, domain.comm_cart, &reqs[num_reqs++]);
     }
-    if (domain.neighbour_east >= 0) {
+    if (domain.neighbour_east != MPI_PROC_NULL) {
         MPI_Isend(buffE.data(), ny, MPI_DOUBLE, domain.neighbour_east, 3, domain.comm_cart, &reqs[num_reqs++]);
         MPI_Irecv(bndE.data(), ny, MPI_DOUBLE, domain.neighbour_east, 2, domain.comm_cart, &reqs[num_reqs++]);
     }
+    //std::cout << "rank: " << domain.rank << " num_reqs: " << num_reqs << std::endl;
 
     // the interior grid points
     for (int j=1; j < jend; j++) {

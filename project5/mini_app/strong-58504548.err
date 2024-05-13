@@ -1,0 +1,385 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/4.1.4
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/11.4.0
+
+
+Currently Loaded Modules:
+  1) StdEnv   2) gcc/11.4.0   3) openmpi/4.1.4
+
+ 
+
+[eu-a2p-277:15960] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:15960] *** reported by process [956694529,0]
+[eu-a2p-277:15960] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:15960] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:15960] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:15960] ***    and potentially your MPI job)
+[eu-a2p-277:16006] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16006] *** reported by process [962265089,0]
+[eu-a2p-277:16006] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16006] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16006] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16006] ***    and potentially your MPI job)
+[eu-a2p-277:16065] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16065] *** reported by process [966721537,0]
+[eu-a2p-277:16065] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16065] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16065] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16065] ***    and potentially your MPI job)
+[eu-a2p-277:16111] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16111] *** reported by process [971833345,0]
+[eu-a2p-277:16111] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16111] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16111] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16111] ***    and potentially your MPI job)
+[eu-a2p-277:16161] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16161] *** reported by process [969080833,0]
+[eu-a2p-277:16161] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16161] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16161] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16161] ***    and potentially your MPI job)
+[eu-a2p-277:16215] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16215] *** reported by process [940244993,0]
+[eu-a2p-277:16215] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16215] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16215] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16215] ***    and potentially your MPI job)
+[eu-a2p-277:16183] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:16183] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:16183] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:16275] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16275] *** reported by process [944242689,1]
+[eu-a2p-277:16275] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16275] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16275] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16275] ***    and potentially your MPI job)
+[eu-a2p-277:16244] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:16244] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:16244] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:16364] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16364] *** reported by process [955318273,0]
+[eu-a2p-277:16364] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16364] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16364] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16364] ***    and potentially your MPI job)
+[eu-a2p-277:16333] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:16333] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:16333] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:16423] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16423] *** reported by process [1194590209,1]
+[eu-a2p-277:16423] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16423] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16423] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16423] ***    and potentially your MPI job)
+[eu-a2p-277:16392] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:16392] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:16392] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:16495] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:16495] *** reported by process [1198260225,1]
+[eu-a2p-277:16495] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:16495] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:16495] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:16495] ***    and potentially your MPI job)
+[eu-a2p-277:16464] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:16464] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:16464] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:18162] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:18162] *** reported by process [1100939265,0]
+[eu-a2p-277:18162] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:18162] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:18162] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:18162] ***    and potentially your MPI job)
+[eu-a2p-277:18235] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:18235] *** reported by process [1077805057,0]
+[eu-a2p-277:18235] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:18235] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:18235] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:18235] ***    and potentially your MPI job)
+[eu-a2p-277:18386] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:18386] *** reported by process [1085210625,0]
+[eu-a2p-277:18386] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:18386] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:18386] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:18386] ***    and potentially your MPI job)
+[eu-a2p-277:18540] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:18540] *** reported by process [1327890433,0]
+[eu-a2p-277:18540] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:18540] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:18540] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:18540] ***    and potentially your MPI job)
+[eu-a2p-277:18683] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:18683] *** reported by process [1335623681,0]
+[eu-a2p-277:18683] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:18683] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:18683] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:18683] ***    and potentially your MPI job)
+[eu-a2p-277:18779] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:18779] *** reported by process [1311113217,1]
+[eu-a2p-277:18779] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:18779] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:18779] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:18779] ***    and potentially your MPI job)
+[eu-a2p-277:18714] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:18714] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:18714] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:18883] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:18883] *** reported by process [1318649857,0]
+[eu-a2p-277:18883] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:18883] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:18883] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:18883] ***    and potentially your MPI job)
+[eu-a2p-277:18853] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:18853] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:18853] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:19046] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:19046] *** reported by process [1294467073,1]
+[eu-a2p-277:19046] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:19046] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:19046] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:19046] ***    and potentially your MPI job)
+[eu-a2p-277:18964] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:18964] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:19179] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:19179] *** reported by process [1302724609,1]
+[eu-a2p-277:19179] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:19179] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:19179] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:19179] ***    and potentially your MPI job)
+[eu-a2p-277:19098] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:19098] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:19098] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:19327] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:19327] *** reported by process [1276510209,1]
+[eu-a2p-277:19327] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:19327] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:19327] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:19327] ***    and potentially your MPI job)
+[eu-a2p-277:19242] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:19242] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:19242] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:21107] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:21107] *** reported by process [1433010177,0]
+[eu-a2p-277:21107] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:21107] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:21107] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:21107] ***    and potentially your MPI job)
+[eu-a2p-277:21250] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:21250] *** reported by process [1442185217,0]
+[eu-a2p-277:21250] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:21250] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:21250] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:21250] ***    and potentially your MPI job)
+[eu-a2p-277:21437] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:21437] *** reported by process [1413939201,0]
+[eu-a2p-277:21437] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:21437] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:21437] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:21437] ***    and potentially your MPI job)
+[eu-a2p-277:21556] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:21556] *** reported by process [1422655489,0]
+[eu-a2p-277:21556] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:21556] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:21556] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:21556] ***    and potentially your MPI job)
+[eu-a2p-277:21674] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:21674] *** reported by process [1397555201,0]
+[eu-a2p-277:21674] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:21674] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:21674] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:21674] ***    and potentially your MPI job)
+[eu-a2p-277:21771] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:21771] *** reported by process [1406599169,1]
+[eu-a2p-277:21771] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:21771] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:21771] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:21771] ***    and potentially your MPI job)
+[eu-a2p-277:21739] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:21739] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:21739] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:21898] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:21898] *** reported by process [1383792641,1]
+[eu-a2p-277:21898] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:21898] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:21898] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:21898] ***    and potentially your MPI job)
+[eu-a2p-277:21831] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:21831] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:21993] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:21993] *** reported by process [1385103361,0]
+[eu-a2p-277:21993] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:21993] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:21993] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:21993] ***    and potentially your MPI job)
+[eu-a2p-277:21939] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:21939] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:21939] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:22101] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:22101] *** reported by process [1359544321,1]
+[eu-a2p-277:22101] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:22101] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:22101] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:22101] ***    and potentially your MPI job)
+[eu-a2p-277:22069] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:22069] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:22266] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:22266] *** reported by process [1374027777,1]
+[eu-a2p-277:22266] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:22266] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:22266] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:22266] ***    and potentially your MPI job)
+[eu-a2p-277:22234] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:22234] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:22234] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:23958] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:23958] *** reported by process [1514405889,0]
+[eu-a2p-277:23958] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:23958] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:23958] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:23958] ***    and potentially your MPI job)
+[eu-a2p-277:24089] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:24089] *** reported by process [1526530049,0]
+[eu-a2p-277:24089] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:24089] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:24089] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:24089] ***    and potentially your MPI job)
+[eu-a2p-277:24157] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:24157] *** reported by process [1493762049,0]
+[eu-a2p-277:24157] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:24157] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:24157] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:24157] ***    and potentially your MPI job)
+[eu-a2p-277:24364] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:24364] *** reported by process [1507852289,0]
+[eu-a2p-277:24364] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:24364] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:24364] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:24364] ***    and potentially your MPI job)
+[eu-a2p-277:24465] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:24465] *** reported by process [1481572353,0]
+[eu-a2p-277:24465] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:24465] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:24465] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:24465] ***    and potentially your MPI job)
+[eu-a2p-277:24535] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:24535] *** reported by process [1486684161,1]
+[eu-a2p-277:24535] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:24535] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:24535] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:24535] ***    and potentially your MPI job)
+[eu-a2p-277:24481] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:24481] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:24481] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:24655] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:24655] *** reported by process [1728839681,1]
+[eu-a2p-277:24655] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:24655] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:24655] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:24655] ***    and potentially your MPI job)
+[eu-a2p-277:24624] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:24624] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:24624] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:24786] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:24786] *** reported by process [1740505089,1]
+[eu-a2p-277:24786] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:24786] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:24786] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:24786] ***    and potentially your MPI job)
+[eu-a2p-277:24706] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:24706] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:24706] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:24959] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:24959] *** reported by process [1714225153,1]
+[eu-a2p-277:24959] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:24959] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:24959] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:24959] ***    and potentially your MPI job)
+[eu-a2p-277:24849] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:24849] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:24849] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:25075] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:25075] *** reported by process [1726545921,1]
+[eu-a2p-277:25075] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:25075] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:25075] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:25075] ***    and potentially your MPI job)
+[eu-a2p-277:25045] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:25045] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:25045] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:27047] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27047] *** reported by process [1853620225,0]
+[eu-a2p-277:27047] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27047] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27047] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27047] ***    and potentially your MPI job)
+[eu-a2p-277:27179] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27179] *** reported by process [1862139905,0]
+[eu-a2p-277:27179] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27179] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27179] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27179] ***    and potentially your MPI job)
+[eu-a2p-277:27225] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27225] *** reported by process [1829175297,0]
+[eu-a2p-277:27225] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27225] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27225] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27225] ***    and potentially your MPI job)
+[eu-a2p-277:27346] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27346] *** reported by process [1841233921,0]
+[eu-a2p-277:27346] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27346] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27346] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27346] ***    and potentially your MPI job)
+[eu-a2p-277:27402] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27402] *** reported by process [1843331073,0]
+[eu-a2p-277:27402] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27402] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27402] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27402] ***    and potentially your MPI job)
+[eu-a2p-277:27518] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27518] *** reported by process [1817968641,1]
+[eu-a2p-277:27518] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27518] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27518] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27518] ***    and potentially your MPI job)
+[eu-a2p-277:27488] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:27488] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:27488] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:27603] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27603] *** reported by process [1821442049,1]
+[eu-a2p-277:27603] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27603] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27603] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27603] ***    and potentially your MPI job)
+[eu-a2p-277:27565] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:27565] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:27565] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:27739] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27739] *** reported by process [1796145153,1]
+[eu-a2p-277:27739] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27739] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27739] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27739] ***    and potentially your MPI job)
+[eu-a2p-277:27699] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:27699] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:27699] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:27870] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27870] *** reported by process [1811677185,1]
+[eu-a2p-277:27870] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27870] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27870] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27870] ***    and potentially your MPI job)
+[eu-a2p-277:27840] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:27840] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:27840] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[eu-a2p-277:27934] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:27934] *** reported by process [1808072705,1]
+[eu-a2p-277:27934] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:27934] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:27934] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:27934] ***    and potentially your MPI job)
+[eu-a2p-277:27897] PMIX ERROR: UNREACHABLE in file server/pmix_server.c at line 2198
+[eu-a2p-277:27897] 1 more process has sent help message help-mpi-errors.txt / mpi_errors_are_fatal
+[eu-a2p-277:27897] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

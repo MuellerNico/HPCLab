@@ -1,0 +1,96 @@
+
+Currently Loaded Modules:
+  1) StdEnv   2) gcc/11.4.0   3) openmpi/4.1.4
+
+ 
+
+[eu-a2p-277:83734] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:83734] *** reported by process [1076494337,0]
+[eu-a2p-277:83734] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:83734] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:83734] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:83734] ***    and potentially your MPI job)
+[eu-a2p-277:83767] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:83767] *** reported by process [1074003969,0]
+[eu-a2p-277:83767] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:83767] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:83767] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:83767] ***    and potentially your MPI job)
+[eu-a2p-277:83840] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:83840] *** reported by process [1086062593,0]
+[eu-a2p-277:83840] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:83840] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:83840] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:83840] ***    and potentially your MPI job)
+[eu-a2p-277:83908] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:83908] *** reported by process [1089536001,0]
+[eu-a2p-277:83908] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:83908] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:83908] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:83908] ***    and potentially your MPI job)
+[eu-a2p-277:84109] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:84109] *** reported by process [1337065473,0]
+[eu-a2p-277:84109] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:84109] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:84109] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:84109] ***    and potentially your MPI job)
+[eu-a2p-277:92478] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:92478] *** reported by process [1853489153,0]
+[eu-a2p-277:92478] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:92478] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:92478] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:92478] ***    and potentially your MPI job)
+[eu-a2p-277:92825] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:92825] *** reported by process [1839661057,0]
+[eu-a2p-277:92825] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:92825] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:92825] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:92825] ***    and potentially your MPI job)
+[eu-a2p-277:92857] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:92857] *** reported by process [1837498369,0]
+[eu-a2p-277:92857] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:92857] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:92857] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:92857] ***    and potentially your MPI job)
+[eu-a2p-277:92890] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:92890] *** reported by process [1843789825,0]
+[eu-a2p-277:92890] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:92890] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:92890] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:92890] ***    and potentially your MPI job)
+[eu-a2p-277:92923] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:92923] *** reported by process [1841364993,0]
+[eu-a2p-277:92923] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:92923] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:92923] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:92923] ***    and potentially your MPI job)
+[eu-a2p-277:100685] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:100685] *** reported by process [2389901313,0]
+[eu-a2p-277:100685] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:100685] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:100685] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:100685] ***    and potentially your MPI job)
+[eu-a2p-277:100717] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:100717] *** reported by process [2387738625,0]
+[eu-a2p-277:100717] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:100717] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:100717] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:100717] ***    and potentially your MPI job)
+[eu-a2p-277:100750] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:100750] *** reported by process [2394030081,0]
+[eu-a2p-277:100750] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:100750] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:100750] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:100750] ***    and potentially your MPI job)
+[eu-a2p-277:100783] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:100783] *** reported by process [2391605249,0]
+[eu-a2p-277:100783] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:100783] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:100783] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:100783] ***    and potentially your MPI job)
+[eu-a2p-277:100857] *** An error occurred in MPI_Dims_create
+[eu-a2p-277:100857] *** reported by process [2395406337,0]
+[eu-a2p-277:100857] *** on communicator MPI_COMM_WORLD
+[eu-a2p-277:100857] *** MPI_ERR_DIMS: invalid topology dimension
+[eu-a2p-277:100857] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[eu-a2p-277:100857] ***    and potentially your MPI job)
