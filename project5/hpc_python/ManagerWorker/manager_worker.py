@@ -28,8 +28,30 @@ def manager(comm, tasks):
     -------
     ... ToDo ...
     """
+    # distribute tasks to workers
+    ntasks = len(tasks)
+    print(f"Manager has {ntasks} tasks to do")
+    for i in range(1, comm.Get_size()):
+        if ntasks > 0:
+            comm.send(tasks.pop(0), dest=i, tag=TAG_TASK)
+            ntasks -= 1
+        else:
+            break
+    
+    # receive results from workers
+    TasksDoneByWorker = np.zeros(comm.Get_size(), dtype=int)
+    while ntasks > 0:
+        status = MPI.Status()
+        task = comm.recv(source=MPI.ANY_SOURCE, tag=TAG_TASK_DONE)
+        sender_rank = status.Get_source()
+        print(f"Manager received task from worker {sender_rank}")
+        TasksDoneByWorker[sender_rank] += 1
 
-    pass
+        if ntasks > 0:
+            comm.send(tasks.pop(0), sender_rank, tag=TAG_TASK)
+            ntasks -= 1
+        else:
+            comm.send(None, sender_rank, tag=TAG_DONE)
 
 def worker(comm):
     """
@@ -40,7 +62,12 @@ def worker(comm):
     comm : mpi4py.MPI communicator
         MPI communicator
     """
-    pass
+    while True:
+        task = comm.recv(source=MANAGER, tag=TAG_TASK)
+        if task is None:
+            break
+        task.do_work()
+        comm.send((comm.Get_rank(), task), dest=MANAGER, tag=TAG_TASK_DONE)
 
 def readcmdline(rank):
     """
@@ -107,12 +134,19 @@ if __name__ == "__main__":
     y_max  = +1.5
     M = mandelbrot(x_min, x_max, nx, y_min, y_max, ny, ntasks)
     tasks = M.get_tasks()
-    for task in tasks:
+    if my_rank == MANAGER:
+        TasksDoneByWorker = np.zeros(size, dtype=int)
+        manager(comm, tasks)
+        m = M.combine_tasks(tasks)
+        plt.imshow(m.T, cmap="gray", extent=[x_min, x_max, y_min, y_max])
+        plt.savefig("mandelbrot.png")
+    else:
+        worker(comm)
+    
+    """for task in tasks:
         task.do_work()
-    m = M.combine_tasks(tasks)
-    plt.imshow(m.T, cmap="gray", extent=[x_min, x_max, y_min, y_max])
-    plt.savefig("mandelbrot.png")
-
+    m = M.combine_tasks(tasks)"""
+    
     # stop timer
     timespent += time.perf_counter()
 
